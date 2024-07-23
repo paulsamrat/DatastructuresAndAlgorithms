@@ -1,0 +1,15 @@
+structural pattern
+points
+1. needs to structure the code  like complex api's are wrapper around like black-box and simple interfaces are exposed to client
+2. facade class hides away complexity of the sub systems and client calls the interfaces / simpler api's
+
+complex frameworks and libraries
+client calls --> simple api or 1 outer simple api -
+that api . might call multiple api's to achieve a desired task
+facade example - bookmyshow
+1. create a bms facade class with a single api like book ticket 
+now book ticket api - will call availability  , payment systems , notification systems internally to make the ultimate ticket booking
+
+
+adapter design pattern comes from structure desing pattern
+- creating a interface between two incompatible interfaces like - 1 legacy code interacting with new code base 

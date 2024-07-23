@@ -1,0 +1,111 @@
+package com.practise.datastructures.sorting;
+
+public class QuickSortImpl {
+	private int array[];
+    private int length;
+ 
+    public void sort(int[] inputArr) {
+         
+        if (inputArr == null || inputArr.length == 0) {
+            return;
+        }
+        this.array = inputArr;
+        length = inputArr.length;
+        quickSort(0, length - 1);
+        //quickSort_1(0, length - 1);
+    }
+ 
+    private void quickSort(int lowerIndex, int higherIndex) {
+         
+        int i = lowerIndex;
+        int j = higherIndex;
+        // calculate pivot number, I am taking pivot as middle index number
+        int pivot = array[lowerIndex+(higherIndex-lowerIndex)/2];
+        // Divide into two arrays
+        while (i < j) {
+            /**
+             * In each iteration, we will identify a number from left side which
+             * is greater then the pivot value, and also we will identify a number
+             * from right side which is less then the pivot value. Once the search
+             * is done, then we exchange both numbers.
+             */
+            while (array[i] <= pivot) {
+                i++;
+            }
+            while (array[j] > pivot) {
+                j--;
+            }
+            if (i < j) {
+                exchangeNumbers(i, j);
+                //move index to next position on both sides
+                i++;
+                j--;
+            }
+        }
+        // call quickSort() method recursively
+        if (lowerIndex < j)
+            quickSort(lowerIndex, j);
+        if (i < higherIndex)
+            quickSort(i, higherIndex);
+    }
+ 
+//    private int partition(int lowerIndex, int higherIndex) {
+//        
+//        int i = lowerIndex;
+//        int j = higherIndex;
+//        // calculate pivot number, I am taking pivot as middle index number
+//        int pivot = array[lowerIndex+(higherIndex-lowerIndex)/2];
+//        // Divide into two arrays
+//        while (i <= j) {
+//            /**
+//             * In each iteration, we will identify a number from left side which
+//             * is greater then the pivot value, and also we will identify a number
+//             * from right side which is less then the pivot value. Once the search
+//             * is done, then we exchange both numbers.
+//             */
+//            while (array[i] < pivot) {
+//                i++;
+//            }
+//            while (array[j] > pivot) {
+//                j--;
+//            }
+//            if (i <= j) {
+//                exchangeNumbers(i, j);
+//                //move index to next position on both sides
+//                i++;
+//                j--;
+//            }
+//        }
+//        int pivotIdx = lowerIndex+(higherIndex-lowerIndex)/2;
+//        exchangeNumbers(pivotIdx, j);
+//        return j;
+//    }
+    
+//    private void quickSort_1(int start, int end)
+//    {
+//    	if (start < end)
+//    	{
+//    		int partitionIdx = partition(start, end);
+//    		quickSort_1(start,partitionIdx-1);
+//    		quickSort_1(partitionIdx+1, end);
+//    	}
+//    }
+ 
+    private void exchangeNumbers(int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+     
+    public static void main(String a[]){
+         
+        QuickSortImpl sorter = new QuickSortImpl();
+        int[] input = {3,5,1,2,6,9,7};
+        sorter.sort(input);
+        for(int i:input){
+            System.out.print(i);
+            System.out.print(" ");
+        }
+    }
+}
+

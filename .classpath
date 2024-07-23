@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="Stacks_Queues"/>
+	<classpathentry kind="src" path="LinkedLists"/>
+	<classpathentry kind="src" path="Trees"/>
+	<classpathentry kind="src" path="challenge"/>
+	<classpathentry kind="src" path="collections"/>
+	<classpathentry kind="src" path="datastructures"/>
+	<classpathentry kind="src" path="designpatterns"/>
+	<classpathentry kind="src" path="file"/>
+	<classpathentry kind="src" path="Gayle"/>
+	<classpathentry kind="src" path="hacker"/>
+	<classpathentry kind="src" path="interview"/>
+	<classpathentry kind="src" path="multithreading"/>
+	<classpathentry kind="src" path="nested_classes"/>
+	<classpathentry kind="src" path="parent"/>
+	<classpathentry kind="src" path="programs"/>
+	<classpathentry kind="src" path="reflection"/>
+	<classpathentry kind="src" path="serialization"/>
+	<classpathentry kind="src" path="shallow"/>
+	<classpathentry kind="src" path="Grind75"/>
+	<classpathentry kind="src" path="Arrays"/>
+	<classpathentry kind="src" path="Graphs"/>
+	<classpathentry kind="src" path="SOLID"/>
+	<classpathentry kind="src" path="codingpatterns"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
