@@ -28,5 +28,9 @@
 	<classpathentry kind="src" path="Graphs"/>
 	<classpathentry kind="src" path="SOLID"/>
 	<classpathentry kind="src" path="codingpatterns"/>
+	<classpathentry kind="src" path="Strings"/>
+	<classpathentry kind="src" path="InterviewMaster100"/>
+	<classpathentry kind="src" path="dynamicprogramming"/>
+	<classpathentry kind="src" path="HelloInterview"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

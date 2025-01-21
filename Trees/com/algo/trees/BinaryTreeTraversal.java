@@ -1,6 +1,8 @@
 package com.algo.trees;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class BinaryTreeTraversal {
@@ -53,16 +55,30 @@ public class BinaryTreeTraversal {
 	//level order traversal
 	private void levelOrderTraversal(final BTNode node) {
 		final Queue<BTNode> q = new LinkedList<BTNode>();
+		final List<List<Integer>> result = new ArrayList<List<Integer>>();
+		List<Integer> temp1 = new ArrayList<Integer>();
 		q.add(node); // add the root node
+		q.add(null);
 		while(!q.isEmpty()) {
 			final BTNode temp = q.poll();
-			System.out.println(temp.data);
+			if (temp == null) {
+				if(temp1.size() > 0)
+					result.add(new ArrayList<Integer>(temp1));
+				else
+					break;
+				temp1.clear();
+				q.add(null);
+				continue;
+			}
+			//System.out.println(temp.data);
+			temp1.add(temp.data);
 			if (null != temp.left)
 					q.add(temp.left);
 			if (null != temp.right)
 				q.add(temp.right);
 			
 		}
+		System.out.println(result);
 	}
 	
 	//invert or mirror image of binary tree

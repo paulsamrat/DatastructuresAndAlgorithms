@@ -608,29 +608,7 @@ public class ArrayImplementations {
 		 }
 		 System.out.println(peakElements);
 	 }
-	 //http://www.geeksforgeeks.org/trapping-rain-water/
-	 public static void trappingRainWater(int[] barsLengthHeight){
-		 double waterAmmulated = 0.0d;
-		 //pre-compute the highest bar on the left side of each bar 
-		 int[] highestLeftBar = new int[barsLengthHeight.length];
-		 //pre-compute the highest bar on the right side of each bar 
-		 int[] highestRightBar = new int[barsLengthHeight.length];
-		 //compute
-		 highestLeftBar[0] = barsLengthHeight[0];
-		 highestRightBar[barsLengthHeight.length-1] = barsLengthHeight[barsLengthHeight.length-1];
-		 for (int i = 1 ;i < barsLengthHeight.length ; i++)
-		 			 highestLeftBar[i] = Math.max(barsLengthHeight[i-1], barsLengthHeight[i]);
-		 for (int i = barsLengthHeight.length-2 ;i >= 0   ; i--)
-			 highestRightBar[i] = Math.max(barsLengthHeight[i+1], barsLengthHeight[i]);
-		 // Calculate the accumulated water element by element
-		 // consider the amount of water on i'th bar, the
-		 // amount of water accumulated on this particular
-		 // bar will be equal to min(left[i], right[i]) - arr[i] .
-		 for (int i = 0 ; i < barsLengthHeight.length ; i++)
-			 waterAmmulated+=Math.min(highestLeftBar[i],highestRightBar[i]) - barsLengthHeight[i];
-		 
-		 System.out.println(" water acumulated " + waterAmmulated);
-	 }
+	 
 	 final static int[] offsets = {-1, 0, +1};
 
 	 private static boolean neighborExists(int[][] matrix, int i, int j)
@@ -999,7 +977,6 @@ public class ArrayImplementations {
 		findMissingNoInLogN(new int[]{1,2,4,5,6,7,8});
 		findCommon(new int []{1,2,3,4,5,6,7,8,9,10}, new int[]{1,3,5,6,7,8,12},new int[]{2,3,4,5,8,9});
 		findPeakElement(new int[]{1,4,3,6,7,5});
-		trappingRainWater(new int[]{3,0,0,2,0,4});
 		 int[][] matrix = {
                  {1, 0, 1, 0, 1},
                  {1, 1, 0, 0, 0},

@@ -1,4 +1,4 @@
-package com.practise.shallow.deep.copy;
+package deep.copy;
 
 public class ShallowDeepCopyImpl implements Cloneable{
 
