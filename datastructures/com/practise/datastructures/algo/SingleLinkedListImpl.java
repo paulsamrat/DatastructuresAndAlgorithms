@@ -1,9 +1,8 @@
 package com.practise.datastructures.algo;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
+import java.util.Stack;
 
 class ListNode{
 	int data;
@@ -699,6 +698,28 @@ public class SingleLinkedListImpl {
 	/**
 	 * @param args
 	 */
+	 //https://leetcode.com/problems/reorder-list/
+	 public static void reorderList(ListNode head) {
+		 final Stack<ListNode> stack = new Stack<ListNode>();
+		 ListNode curr = head;
+		 while(curr!= null) {
+			 stack.push(curr);
+			 curr = curr.next;
+		 }
+		 ListNode res = new ListNode(-1);
+		 ListNode temp = res;
+		 curr = head;
+		 while(curr != null && !stack.isEmpty() && curr.data != stack.peek().data) {
+			 res.next = new ListNode(curr.data);
+			 res.next.next = new ListNode(stack.pop().data);
+			 res = res.next.next;
+			 curr = curr.next;
+		 }
+		 if (curr != null)
+			 res.next =  new ListNode(curr.data);
+		 head = temp.next;
+		 traverse(head);
+	 }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ListNode first = create(new int[]{1,2,3,4,5,6});
@@ -732,6 +753,7 @@ public class SingleLinkedListImpl {
    		ListNode head = create(new int[]{1,2,3,4,5});
    		deleteWithoutHeadPointer(head,head.next);
    		sortALinkedListContaining012(create(new int[]{1,0,1,2,1,2,0,1}));
+   		reorderList(create(new int[]{1,2,3,4}));
 	}
 	
 

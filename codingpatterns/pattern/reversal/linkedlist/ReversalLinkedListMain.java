@@ -13,7 +13,7 @@ public class ReversalLinkedListMain {
 	
 	public static void main(String[] args) {
 		
-		
+		int a,b=0;
 		//build the linked list
 		int[] arr = new int[] {1,2,3,4,5};
 		for (int val : arr) {

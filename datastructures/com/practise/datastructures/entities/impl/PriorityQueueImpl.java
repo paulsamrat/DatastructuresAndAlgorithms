@@ -2,6 +2,7 @@ package com.practise.datastructures.entities.impl;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
+import java.util.Queue;
 //http://algorithms.tutorialhorizon.com/priority-queue-implementation/
 
 class  IntegerComparator implements Comparator<Integer>{
@@ -12,7 +13,7 @@ class  IntegerComparator implements Comparator<Integer>{
 	
 }
 public class PriorityQueueImpl {
-	PriorityQueue<Integer> pq;
+	Queue<Integer> pq;
 	//default the Pri­or­ity Queue works as min-Heap.
 	public PriorityQueueImpl() {
 		pq = new PriorityQueue<Integer>();
